@@ -9,8 +9,7 @@ function App() {
   setNewTask(event.target.value)
  };
  const addTask=()=>{
-  const newArray =[...toDoList,newTask]
-  setToDoList(newArray);
+  setToDoList([...toDoList,newTask]);
  };
 
   return (
@@ -22,7 +21,12 @@ function App() {
     </div>
     <div>
       {toDoList.map((task)=>{
-        return <h1>{task}</h1>
+       return(
+        <div>
+          <h1>{task}</h1>
+          <button>delete</button>
+        </div>
+       )
       })}
     </div>
    </div>
