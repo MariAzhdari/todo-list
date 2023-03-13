@@ -24,19 +24,19 @@ function App() {
  };
 
   return (
-   <div>
-    <div>
+   <div className='all'>
+    <div className='first'>
       <input onChange={taskHandler}/>
       <button onClick={addTask}>Add Task</button>
     </div>
     <div>
       {toDoList.map((task)=>{
        return(
-        <div>
+        <div className='second'>
           <h1>{task.taskName}</h1>
           <button onClick={() => deleteItemHandler(task.id)}>delete</button>
         </div>
-       )
+       ) 
       })}
     </div>
    </div>
