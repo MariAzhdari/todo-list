@@ -12,19 +12,23 @@ function App() {
   setToDoList([...toDoList,newTask]);
  };
 
+ const deleteItemHandler = (taskName) => {
+  setToDoList(toDoList.filter((task)=> task !== taskName
+  ));
+ };
+
   return (
    <div>
     <div>
       <input onChange={taskHandler}/>
       <button onClick={addTask}>Add Task</button>
-     
     </div>
     <div>
       {toDoList.map((task)=>{
        return(
         <div>
           <h1>{task}</h1>
-          <button>delete</button>
+          <button onClick={() => deleteItemHandler(task)}>delete</button>
         </div>
        )
       })}
